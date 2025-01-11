@@ -9,27 +9,44 @@
 <body>
   <div class="container">
     <header>
-      <h1>Selamat Datang di SMP Server Selector</h1>
-      <p>Pilih server favoritmu dan bergabunglah dengan komunitas Minecraft Bedrock kami!</p>
+      <h1>SMP Server Selector</h1>
+      <p>Pilih server favoritmu untuk bergabung dengan komunitas Minecraft Bedrock kami!</p>
     </header>
     <main>
-      <div class="server-selector">
-        <label for="server">Pilih Server:</label>
-        <select id="server">
-          <option value="minecraft://?addExternalServer=Eclipse%20SMP|eclipsesmp.zapto.org:19178">Eclipse SMP</option>
-          <option value="minecraft://?addExternalServer=Toolbox%20SMP|toolboxsmp.ddns.net:19131">Toolbox SMP</option>
-        </select>
-      </div>
-      <button id="join-button">Bergabung Sekarang</button>
+      <section class="selector">
+        <h2>1. Pilih Server</h2>
+        <div class="options">
+          <button class="option" data-server="minecraft://?addExternalServer=Eclipse%20SMP|eclipsesmp.zapto.org:19178">Eclipse SMP</button>
+          <button class="option" data-server="minecraft://?addExternalServer=Toolbox%20SMP|toolboxsmp.ddns.net:19131">Toolbox SMP</button>
+        </div>
+      </section>
+      <button id="join-button" disabled>Bergabung Sekarang</button>
     </main>
     <footer>
       <p>© 2025 SMP Server Selector | Petualangan Tanpa Batas</p>
     </footer>
   </div>
   <script>
-    document.getElementById('join-button').addEventListener('click', () => {
-      const serverURL = document.getElementById('server').value;
-      window.location.href = serverURL;
+    let selectedServer = '';
+    const buttons = document.querySelectorAll('.option');
+    const joinButton = document.getElementById('join-button');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Reset all buttons
+        buttons.forEach(btn => btn.classList.remove('selected'));
+        // Highlight selected button
+        button.classList.add('selected');
+        // Enable the join button and store the server URL
+        selectedServer = button.getAttribute('data-server');
+        joinButton.disabled = false;
+      });
+    });
+
+    joinButton.addEventListener('click', () => {
+      if (selectedServer) {
+        window.location.href = selectedServer;
+      }
     });
   </script>
 </body>
