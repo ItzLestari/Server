@@ -1,8 +1,9 @@
+/* General Styling */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: #0d0d0d;
   color: #ffffff;
   text-align: center;
 }
@@ -12,7 +13,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 header {
@@ -21,38 +22,60 @@ header {
 
 header h1 {
   font-size: 2.5rem;
-  margin: 0;
+  color: #f39c12;
 }
 
 header p {
   font-size: 1.2rem;
-  margin: 10px 0 0;
+  color: #cccccc;
 }
 
 main {
+  width: 90%;
+  max-width: 600px;
   margin: 20px 0;
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.server-selector {
-  margin-bottom: 20px;
+h2 {
+  font-size: 1.5rem;
+  color: #f39c12;
+  margin-bottom: 10px;
 }
 
-label {
-  font-size: 1.2rem;
-  margin-right: 10px;
+.selector .options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-select {
+.option {
+  background: #333333;
+  border: 2px solid #444444;
+  color: #ffffff;
+  padding: 15px;
   font-size: 1rem;
-  padding: 5px 10px;
-  border-radius: 5px;
-  border: none;
-  background-color: #ffffff;
-  color: #000;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-button {
-  background-color: #f39c12;
+.option:hover {
+  background: #444444;
+  border-color: #f39c12;
+}
+
+.option.selected {
+  background: #f39c12;
+  border-color: #e67e22;
+  color: #0d0d0d;
+}
+
+button#join-button {
+  background: #f39c12;
   color: #ffffff;
   border: none;
   padding: 15px 30px;
@@ -61,18 +84,21 @@ button {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s, transform 0.2s;
+  margin-top: 20px;
 }
 
-button:hover {
-  background-color: #e67e22;
+button#join-button:disabled {
+  background: #555555;
+  cursor: not-allowed;
+}
+
+button#join-button:hover:enabled {
+  background: #e67e22;
   transform: scale(1.05);
 }
 
-button:active {
-  transform: scale(0.95);
-}
-
 footer {
-  margin-top: auto;
+  margin-top: 20px;
   font-size: 0.9rem;
+  color: #cccccc;
 }
