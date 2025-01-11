@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eclipse SMP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Selamat Datang di Eclipse SMP</h1>
+      <p>Gabung bersama komunitas Minecraft Bedrock kami yang seru dan penuh petualangan!</p>
+    </header>
+    <main>
+      <button id="join-button">Bergabung Sekarang</button>
+    </main>
+    <footer>
+      <p>© 2025 Eclipse SMP | Petualangan Tanpa Batas</p>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('join-button').addEventListener('click', () => {
+      window.location.href = 'minecraft://?addExternalServer=Eclipse%20SMP|eclipsesmp.zapto.org:19178';
+    });
+  </script>
+</body>
+</html>
