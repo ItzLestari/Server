@@ -33,6 +33,24 @@ main {
   margin: 20px 0;
 }
 
+.server-selector {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+select {
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ffffff;
+  color: #000;
+}
+
 button {
   background-color: #f39c12;
   color: #ffffff;
